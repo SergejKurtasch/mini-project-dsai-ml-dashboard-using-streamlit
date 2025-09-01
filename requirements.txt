@@ -4,4 +4,5 @@ sqlalchemy
 pymysql
 python-dotenv
 matplotlib
-psycopg2-binary
+psycopg2-bin
+sentence-transformers

@@ -50,6 +50,7 @@ def get_supabase_data_df(sql_query):
 
 
 # Supabase PostgreSQL DB
+@st.cache_data
 def get_store_sales_postgree() -> pd.DataFrame:
     query_daily_store_sales = """
         SELECT 
@@ -69,6 +70,7 @@ def get_store_sales_postgree() -> pd.DataFrame:
     return df
 
 
+@st.cache_data
 def get_total_store_sales() -> pd.DataFrame:
     query_total_store_sales = """
         SELECT 
@@ -84,6 +86,8 @@ def get_total_store_sales() -> pd.DataFrame:
     df = get_supabase_data_df(query_total_store_sales)
     return df
 
+
+@st.cache_data
 def get_top5_rented_films() -> pd.DataFrame:
     query_top5_rented_films = """
         WITH ranked AS (
@@ -112,6 +116,7 @@ def get_top5_rented_films() -> pd.DataFrame:
     return df
 
 
+@st.cache_data
 def get_film_descriptions() -> pd.DataFrame:
     query_film_descriptions = """
         SELECT 
